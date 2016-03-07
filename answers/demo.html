@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Custom Filters</title>
+    <script src="angular.js"></script>
+    <script src="demo.js"></script>
+  </head>
+  <body ng-app="app" ng-controller="commentController">
+    <h1>Top Comments</h1>
+    <label>vote slider</label>
+    <input type="range" min="-20" max="20" ng-model="limit">{{limit}}
+    <ul>
+      <li ng-repeat='comment in comments | votes:limit | orderBy:"votes":true'>
+        {{comment.comment}} ({{comment.votes}} votes)
+      </li>
+    </ul>
+  </body>
+</html>
