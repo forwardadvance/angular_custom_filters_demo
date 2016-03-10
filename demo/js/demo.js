@@ -10,20 +10,11 @@
 // Later we will look at an answer to votes filter
 // Testing
 
-angular.module('app', ['yoify'])
+
+angular.module('app', [])
   .controller('catController', function($scope, $filter) {
-    $scope.kitten = "Trucks";
+    $scope.cat = "Tareco";
     $scope.numbers = [9,1,2,3,6,4,5,6,18,7,8,9,99];
-    var yoify = $filter('yoify')
-  })
-  .filter('min', function() {
-    var filter = function(ary, minVal) {
-      if(!ary) { return }
-      return ary.filter(function(i) {
-        return i > minVal;
-      });
-    }
-    return filter;
   })
 
 
